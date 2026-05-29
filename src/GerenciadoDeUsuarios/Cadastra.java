@@ -1,16 +1,17 @@
-package GerenciaPessoa;
+package GerenciadoDeUsuarios;
 
-import Inicialise.Pessoa;
+import Inicialise.Usuario;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Cadastra {
-    static ArrayList<Pessoa> list = new ArrayList<>();
+    static ArrayList<Usuario> list = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     public static void cadastra(){
         System.out.printf("Digite o nome: ");
-        String nome = scanner.nextLine();
+        String nome = scanner.nextLine().trim();
 
         System.out.print("Idade: ");
         int idade = scanner.nextInt();
@@ -20,8 +21,8 @@ public class Cadastra {
         double altura = scanner.nextDouble();
         scanner.nextLine();
 
-        list.add(new Pessoa( nome, idade, altura));
-        System.out.println("Pessoa cadastrada!");
+        list.add(new Usuario( nome, idade, altura));
+        System.out.println("Usuario cadastrado!");
 
     }
 

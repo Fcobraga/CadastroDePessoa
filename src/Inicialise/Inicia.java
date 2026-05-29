@@ -1,26 +1,27 @@
 package Inicialise;
 
-import GerenciaPessoa.Busca;
-import GerenciaPessoa.Cadastra;
-import GerenciaPessoa.Lista;
-
+import GerenciadoDeUsuarios.Busca;
+import GerenciadoDeUsuarios.Cadastra;
+import GerenciadoDeUsuarios.Lista;
+import GerenciadoDeUsuarios.Remove;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Inicia {
 
-    static ArrayList<Pessoa> list = new ArrayList<>();
+    static ArrayList<Usuario> list = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
         int opcao;
 
         do {
-            System.out.println("======MENUR======");
-            System.out.println("1 -> Cadastra pessoa");
-            System.out.println("2 -> Lista pessoas");
-            System.out.println("3 -> Busca pessoa");
-            System.out.println("4 -> Remover");
+
+            System.out.println("======MENU======");
+            System.out.println("1 -> Cadastra usuario");
+            System.out.println("2 -> Lista usuario");
+            System.out.println("3 -> Busca usuario");
+            System.out.println("4 -> Remover usuario");
             System.out.println("0 -> Sair");
 
 
@@ -38,10 +39,10 @@ public class Inicia {
                     Busca.busca();
                 break;
                 case 4:
-                    Cadastra.cadastra();
+                    Remove.remove(list);
                 break;
                 case 0:
-                    Cadastra.cadastra();
+                    System.out.println("Saindo...");
                 break;
                 default:
                     System.out.printf("Opção invalida");
@@ -50,4 +51,5 @@ public class Inicia {
         }while (opcao != 0);
 
     }
+
 }

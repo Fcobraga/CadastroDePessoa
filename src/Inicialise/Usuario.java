@@ -1,11 +1,11 @@
 package Inicialise;
 
-public class Pessoa {
+public class Usuario {
     private String nome;
     private Integer idade;
     private double altura;
 
-    public Pessoa(String nome, Integer idade, double altura) {
+    public Usuario(String nome, Integer idade, double altura) {
         this.nome = nome;
         this.idade = idade;
         this.altura = altura;
