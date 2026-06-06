@@ -1,26 +1,28 @@
 package GerenciadoDeUsuarios;
 
 import Inicialise.Usuario;
-import java.util.Scanner;
-import static GerenciadoDeUsuarios.Cadastra.list;
+import java.util.ArrayList;
+import static Inicialise.Input.scanner;
 
 public class Busca {
-    static Scanner scanner = new Scanner(System.in);
+    public static void busca(ArrayList<Usuario> list){
 
-    public static void busca(){
-        System.out.println("Digite o nome do usuario: ");
+        System.out.println("Digite o nome do usuario:");
         String nome = scanner.nextLine();
+
         boolean pessoaEncontrada = false;
 
         for (Usuario usuario : list){
-            if (usuario.toString().toLowerCase().contains(nome.toLowerCase())){
-                System.out.println("Esse usuario foi emcontrado.");
+            if (usuario.getNome().trim().equalsIgnoreCase(nome.trim())){
+
+                System.out.println("Usuario encontrado:");
                 System.out.println(usuario);
+
                 pessoaEncontrada = true;
             }
         }
         if (!pessoaEncontrada){
-            System.out.println("Esse usuario nao foi encontrado.");
+            System.out.println("Usuario não encontrado.");
         }
     }
 }

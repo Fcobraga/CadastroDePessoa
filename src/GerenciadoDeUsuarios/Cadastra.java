@@ -1,29 +1,28 @@
 package GerenciadoDeUsuarios;
 
 import Inicialise.Usuario;
-
 import java.util.ArrayList;
-import java.util.Scanner;
+import static Inicialise.Input.scanner;
 
 public class Cadastra {
-    static ArrayList<Usuario> list = new ArrayList<>();
-    static Scanner scanner = new Scanner(System.in);
 
-    public static void cadastra(){
-        System.out.printf("Digite o nome: ");
-        String nome = scanner.nextLine().trim();
+    public static void cadastra(ArrayList<Usuario> list){
 
-        System.out.print("Idade: ");
+        System.out.print("Digite o nome:");
+        String nome = scanner.nextLine();
+
+        System.out.print("Digite a idade:");
         int idade = scanner.nextInt();
-        scanner.nextLine();
 
-        System.out.print("Altura: ");
+        System.out.print("Digite a altura:");
         double altura = scanner.nextDouble();
         scanner.nextLine();
 
-        list.add(new Usuario( nome, idade, altura));
-        System.out.println("Usuario cadastrado!");
+        Usuario usuario = new Usuario(nome, idade, altura);
 
+        list.add(usuario);
+
+        System.out.println("Usuario cadastrado com sucesso!");
+        System.out.println("");
     }
-
 }

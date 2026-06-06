@@ -4,17 +4,18 @@ import GerenciadoDeUsuarios.Busca;
 import GerenciadoDeUsuarios.Cadastra;
 import GerenciadoDeUsuarios.Lista;
 import GerenciadoDeUsuarios.Remove;
+
 import java.util.ArrayList;
-import java.util.Scanner;
+
+import static Inicialise.Input.scanner;
 
 public class Inicia {
 
     static ArrayList<Usuario> list = new ArrayList<>();
-    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        int opcao;
 
+        int opcao;
         do {
 
             System.out.println("======MENU======");
@@ -24,32 +25,30 @@ public class Inicia {
             System.out.println("4 -> Remover usuario");
             System.out.println("0 -> Sair");
 
-
             opcao = scanner.nextInt();
             scanner.nextLine();
 
-            switch(opcao){
+            switch (opcao){
+
                 case 1:
-                    Cadastra.cadastra();
-                break;
+                    Cadastra.cadastra(list);
+                    break;
                 case 2:
-                    Lista.lista();
-                break;
+                    Lista.lista(list);
+                    break;
                 case 3:
-                    Busca.busca();
-                break;
+                    Busca.busca(list);
+                    break;
                 case 4:
                     Remove.remove(list);
-                break;
+                    break;
                 case 0:
                     System.out.println("Saindo...");
-                break;
+                    break;
                 default:
-                    System.out.printf("Opção invalida");
+                    System.out.println("Opção invalida!");
             }
 
-        }while (opcao != 0);
-
+        } while (opcao != 0);
     }
-
 }
